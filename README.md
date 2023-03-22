@@ -1,7 +1,12 @@
 # PALMORIA-VISUAL-ANALYSIS
 
+palmoria dashboard
+:-------------------------:
+![](palmoria_dashboard.png)
+
 ## INTRODUCTION
   Palmoria Group is a manufacturing company based in Nigeria that has an embroided issues about gender inequality in its 3 regions where there businesses are located. Unfortunately, the media recently published in the news with the headline **_"Palmoria, the Manufacturing Patriarchy"_** this doesn’t look good to the owner of the business on their ambition to scale the business to other regions and even overseas.
+ **_Disclaimer_**: All datasets and reports do not represent any company, institution or country, but just a dummy datasets to demonstrate capabilities of Power BI
 
 This documentation outlines the data cleaning process for the Palmoria group Business 
 A 3 sets of data was given to work on and to know about the issues the company is currently facing. The datasets are given below;
@@ -49,21 +54,21 @@ While the **_bonus rules and mappings_** which are the same consist of 12 rows a
 ## Data Cleaning Process
 Using M language and a host of tools available in Power Query Editor, I was able to perform the following transformation to the data set
 
-Text Cleaning 
+### Text Cleaning 
 One of the issues identified during the data cleaning process was with the “Gender” column. The column contains male, female and blank so I replaced the blank with Undisclosed. The power query replaced values was used. [See preview below;]
 
 before column         |       after column
 :--------------------:|:-------------------:
 ![](gender_before.png)|![](gender_after.png)
 
-Department column
+### Department column
 There are few rows that has a “NULL” text in the column so I removed it by unchecking it from the list of other department rows. Which gives our rows to reduce to 987 rows [See preview below;]
 
 before column         |       after column
 :--------------------:|:-------------------:
 ![](depart_before.png)|![](depart_after.png)
 
-Salary Column
+### Salary Column
 There are few rows that has a “null” text in the column so I removed it by unchecking it from the list of other salary rows. Which gives our rows to reduce to 946 rows 
 [See preview below;]
 
@@ -71,7 +76,7 @@ before column      |       after column
 :-----------------:|:-------------------:
 ![](salary_bef.png)|![](salary_after.png)
 
-Salary band column
+### Salary band column
 This is a column where our condition statement was done by grouping each band into their various categories ..ie an IF statement ;
 For example;
 if [Salary] <= 60000 then "band 3" else "band 3")
@@ -81,7 +86,7 @@ Salary band
 :------------------:
 ![](salary_band.png)
 
-Merge table
+### Merge table
 I created a merge table to be able to get the employee who’s worthy of a bonus base on their performance rating so I was able to merge the DSF_emp_data and the bonus rules table together. I merged them by joining their unique identifier which is the “Department” column so that gives me the bonus discount column [See preview below;]
 
 Merged
@@ -99,5 +104,25 @@ The model is a star schema
 There are 2-dimensional tables and 1 fact table. The dimension tables are all joined to the fact table (auto-detect) with a one-to-many relationships
 but after i merged the DSF_emp_data to the bonus rules table i adjusted the model which gives a many-to-many relationships.
 
-## Palmoria dashboard
+
+## CONCLUSIONS
+**_Gender Distribution_**
+•	The gender disparity is most prominent in the Kaduna region (M-F ratio: 182-165), followed by Lagos (M-F ratio: 124-118) and then Abuja which has a negligible gender disparity (M-F ratio: 159-158).
+•	Of the 12 departments, 7 have a higher Male headcount, with the Legal department leading the pack (M-F ratio: 49-34).
+•	Overall, the gender disparity across the company is considered ‘MARGINAL’.
+
+**_Salary Structure_**
+•	A gender pay gap exists across all regions of the company; at an average M-F salary ratio of $74.8k – $72.1k, male employees were noted to earn slightly more in all regions. 
+•	Male employees earned more in total terms across 7 (out of 12) departments. On an average salary basis, Male employees earned more in 9 (out of 12) departments across the company. 
+•	Given the marginal pay gap, there isn’t sufficient evidence based on available data to conclude if the disparity is reflective of patriarchy.
+•	Performance Ratings & Bonuses
+•	Female employees overall performed better in the period under review (reflected in higher overall bonuses which accrued to females).
+
+## RECOMMENDATIONS
+•	Given the minimality of the gender disparity & pay gap, PALMORIA should consider reviewing its employment and remuneration policy to close the inherent gender gaps and neutralize current negative opinions.
+•	PALMORIA should consider reviewing the salary structure across the company to meet the minimum wage requirement.
+
+
+
+
 
