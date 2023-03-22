@@ -77,13 +77,15 @@ For example;
 if [Salary] <= 60000 then "band 3" else "band 3")
 . [See preview below;]
 
-salary band
-![](salary band.png)
+Salary band
+:------------------:
+![](salary_band.png)
 
 Merge table
 I created a merge table to be able to get the employee who’s worthy of a bonus base on their performance rating so I was able to merge the DSF_emp_data and the bonus rules table together. I merged them by joining their unique identifier which is the “Department” column so that gives me the bonus discount column [See preview below;]
 
 Merged
+:-------------:
 ![](merged.png)
 
 ## Modelling
@@ -97,4 +99,5 @@ The model is a star schema
 There are 2-dimensional tables and 1 fact table. The dimension tables are all joined to the fact table (auto-detect) with a one-to-many relationships
 but after i merged the DSF_emp_data to the bonus rules table i adjusted the model which gives a many-to-many relationships.
 
+## Palmoria dashboard
 
