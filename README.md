@@ -94,7 +94,7 @@ Merged
 ![](merged.png)
 
 ## Modelling
-Autimatically derieved relaionships are adjusted to remove and replace unwanted relationships with the required.
+Automatically derieved relaionships are adjusted to remove and replace unwanted relationships with the required.
 
 Auto model         |       Adjusted model
 :-----------------:|:---------------------:
